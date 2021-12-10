@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,700;1,100;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  font-family: "Fira Sans", sans-serif;
+  height: 100vh;
+}
+
+html::-webkit-scrollbar,
+#servDivDetail::-webkit-scrollbar,
+.scrollmand::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollmand {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+.scrollmandx {
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+.sectscroll {
+  scroll-snap-align: start;
+}
