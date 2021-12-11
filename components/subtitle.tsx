@@ -27,7 +27,7 @@ export const Subtitle = (props: Props) => {
             <h1 id='subti' className={`italic pl-6 uppercase tracking-widest absolute transition-all top-0`}>
                 <li>Home</li>
                 <li>Services</li>
-                <li>About</li>
+                <li>Blog</li>
                 <li>Contact</li>
             </h1>
         </div>

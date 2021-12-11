@@ -6,7 +6,7 @@ interface Props {
 
 export const ContactUs = (props: Props) => {
     return (
-        <section id='sectCont' className='h-screen w-full sectscroll pt-8 flex flex-col justify-between items-center dark:text-white'>
+        <section id='sectCont' className='h-screen w-full relative bg-white  dark:bg-black sectscroll pt-8 flex flex-col justify-between items-center dark:text-white'>
             <div className=' w-screen h-full relative overflow-hidden z-10'>
                 <div id='contUsDiv' className='z-10 rounded-sm backdrop-filter backdrop-blur-md absolute h-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 md:w-1/3 '>
                     <div className='w-full h-full rounded-md flex justify-between flex-col'>

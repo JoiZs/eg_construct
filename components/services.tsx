@@ -44,7 +44,7 @@ export const Services = (props: Props) => {
         }
     }
     return (
-        <section id='sectServ' className='h-screen relative w-full sectscroll flex flex-col md:flex-row px-12 py-8 items-center dark:text-white'>
+        <section id='sectServ' className='h-screen bg-white  dark:bg-black relative w-full sectscroll flex flex-col md:flex-row px-12 py-8 items-center dark:text-white'>
             <div id='servList' className='list-none w-full md:w-1/2 relative uppercase h-1/6 md:h-1/2 flex flex-col-reverse md:flex-row justify-center'>
                 <div  className='tracking-wider text-tiny md:text-sm w-full flex flex-row md:flex-col justify-evenly md:justify-around'>
                     <li id='servList1' className={`cursor-pointer h-6 w-14 md:w-full flex items-center justify-center md:justify-end md:text-right`} onClick={()=>clickContent('servList1')}>golf</li>

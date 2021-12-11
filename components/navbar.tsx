@@ -34,7 +34,6 @@ const NavBar:React.FC = (props:Props) =>{
         if(section[0]===1 ){
             gsap.fromTo('#homeTitle',{translateX:'-100%', opacity:0},{duration:1 ,translateX:'0%', opacity:1})
             gsap.fromTo('#homeSubt',{translateX:'-100%', opacity:0},{duration:1 ,translateX:'0%', opacity:1, delay:0.2, ease:'expo.out'})
-            gsap.fromTo('#sliderImg',{translateX:'15%', opacity:1, filter:'blur(3px)', scale:0.8},{duration:1.5 ,scale:1,translateX:'0%',filter:'blur(0)', opacity:1, ease:'expo.inOut'})
             gsap.fromTo('#servDivDetail',{ translateX:'0', opacity:1},{duration:0 ,translateX:'-2.5rem', opacity:0, ease:'power2.inOut'})
             gsap.fromTo('#servList',{ translateX:'0', opacity:1},{duration:0 ,translateX:'-2.5rem', opacity:0, ease:'power2.inOut'})
             
@@ -47,7 +46,6 @@ const NavBar:React.FC = (props:Props) =>{
             
             gsap.fromTo('#homeTitle',{translateX:'-100%', opacity:1},{duration:1 ,translateX:'0%', opacity:0})
             gsap.fromTo('#homeSubt',{translateX:'-100%', opacity:1},{duration:1 ,translateX:'0%', opacity:0, delay:0.2, ease:'expo.out'})
-            gsap.fromTo('#sliderImg',{translateX:'15%', opacity:1, filter:'blur(3px)', scale:0.8},{duration:1.5 ,scale:1,translateX:'0%',filter:'blur(0)', opacity:0, ease:'expo.inOut'})
             gsap.fromTo(['#circle1', '#circle2'],{scale:0, opacity:0.5},{duration:1 ,scale:1, opacity:0})
             
         }else if(section[2] === 1){
@@ -73,10 +71,11 @@ const NavBar:React.FC = (props:Props) =>{
             if(darkModeOn === 0){
                 setDarkModeOn(1)
                 document.querySelector('html')!.className='dark'
-                
+                gsap.to('#bgVdo',{filter:'brightness(0.6)'})
             }else{
                 setDarkModeOn(0)
                 document.querySelector('html')!.className=''
+                gsap.to('#bgVdo',{filter:'brightness(1.2)'})
     
             }
         })
