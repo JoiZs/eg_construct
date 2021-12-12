@@ -1,5 +1,7 @@
 import React from 'react'
 import SimpleImageSlider from 'react-simple-image-slider'
+import Hls from 'hls.js'
+import ReactHlsPlayer from 'react-hls-player';
 
 interface Props {
     
@@ -7,13 +9,18 @@ interface Props {
 
 export const MainHome = (props: Props) => {
   
-    
+    const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
+    const playerRef = React.useRef<any>();
+    const onLoadedData = () => {
+        setIsVideoLoaded(true);
+      };
     const images = [
         {url: 'homeImg/elephant.jpg'},
         {url: 'homeImg/giraffe.jpg'},
         
     ]
     return (
+        
         <section id='sectHome' className='h-screen relative w-full sectscroll py-8 flex justify-center items-center dark:text-white'>
             
             <div className='absolute z-20  mx-10 transform md:-translate-x-28 lg:-translate-x-60 border-l-2 border-black dark:border-white overflow-hidden' >
@@ -33,10 +40,20 @@ export const MainHome = (props: Props) => {
                     />
                 <span className='transform text-xs italic opacity-75'>@Finest_Travel</span>
             </div> */}
-                <video id='bgVdo' className='fixed filter brightness-75 z-0 h-screen w-screen object-cover' autoPlay={true} loop={true} muted={true} >
-                    <source src='main.mp4' type='video/mp4' />
-                </video>
-        
+                {/* <video id='bgVdo' playsInline preload='true' onLoadedData={onLoadedData} className='fixed filter brightness-75 z-0 h-screen w-screen object-cover' autoPlay loop muted >
+                    <source src='homebg/main.m3u8' type='application/x-mpegURL' />
+                </video> */}
+                <ReactHlsPlayer
+                    playerRef={playerRef}
+                    src="homebg/main.m3u8"
+                    autoPlay ={true}
+                    loop = {true}
+                    playsInline ={true}
+                    controls={false}
+                    muted={true}
+                    className='absolute object-cover h-screen w-screen'
+                />
+
         </section>
     )
 }
