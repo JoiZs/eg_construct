@@ -40,19 +40,20 @@ export const MainHome = (props: Props) => {
                     />
                 <span className='transform text-xs italic opacity-75'>@Finest_Travel</span>
             </div> */}
-                {/* <video id='bgVdo' playsInline preload='true' onLoadedData={onLoadedData} className='fixed filter brightness-75 z-0 h-screen w-screen object-cover' autoPlay loop muted >
-                    <source src='homebg/main.m3u8' type='application/x-mpegURL' />
-                </video> */}
-                <ReactHlsPlayer
+                <video id='bgVdo' preload="auto" playsInline={true} onLoadedData={onLoadedData} className='fixed filter brightness-75 z-0 h-screen w-screen object-cover' autoPlay loop muted >
+                    <source src='homebg/main.webm' type='video/webm' />
+                </video>
+                {/* <ReactHlsPlayer
                     playerRef={playerRef}
-                    src="homebg/main.m3u8"
+                    src="http://kyiemaltv.epizy.com/videos/kyarchayar/hp.m3u8"
+                    onLoadedData={()=>console.log('loaded')}
                     autoPlay ={true}
                     loop = {true}
                     playsInline ={true}
                     controls={false}
                     muted={true}
                     className='absolute object-cover h-screen w-screen'
-                />
+                /> */}
 
         </section>
     )
