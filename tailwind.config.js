@@ -27,6 +27,7 @@ module.exports = {
     extend: {
       filter: ["hover"],
       contrast: ["hover"],
+      invert: ["dark"],
     },
   },
   plugins: [],
